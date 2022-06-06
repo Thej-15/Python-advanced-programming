@@ -1,0 +1,143 @@
+﻿1. Create a class Smoothie and do the following:
+Create an instance attribute called ingredients.
+Create a get_cost method which calculates the total cost of the ingredients used to make the smoothie.
+Create a get_price method which returns the number from get_cost plus the number from get_cost multiplied by 1.5. Round to two decimal places.
+Create a get_name method which gets the ingredients and puts them in alphabetical order into a nice descriptive sentence. If there are multiple ingredients, add the word "Fusion" to the end but otherwise, add "Smoothie". Remember to change "-berries" to "-berry". See the examples below.
+Ingredient    Price
+Strawberries   $1.50
+Banana        $0.50
+Mango         $2.50
+Blueberries       $1.00
+Raspberries       $1.00
+Apple         $1.75
+Pineapple     $3.50
+
+
+Examples:
+
+
+s1 = Smoothie(["Banana"])
+s1.ingredients ➞ ["Banana"]
+s1.get_cost() ➞ "$0.50"
+s1.get_price() ➞ "$1.25"
+s1.get_name() ➞ "Banana Smoothie"
+s2 = Smoothie(["Raspberries", "Strawberries", "Blueberries"])
+s2.ingredients ➞ ["Raspberries", "Strawberries", "Blueberries"]
+s2.get_cost() ➞ "$3.50"
+s2.get_price() ➞ "$8.75"
+s2.get_name() ➞ "Blueberry Raspberry Strawberry Fusion"
+
+
+
+
+Ans:
+  
+
+
+
+2. Your task is to write a program which allows teachers to create a multiple choice test in a class called Testpaper and to be also able to assign a minimum pass mark. The testpaper's subject should also be included. The attributes are in the following order:
+subject
+markscheme
+pass_mark
+As well as that, we need to create student objects to take the test itself! Create another class called Student and do the following:
+
+
+Create an attribute called tests_taken and set the default as 'No tests taken'.
+Make a method called take_test(), which takes in the testpaper object they are completing and the student's answers. Compare what they wrote to the mark scheme, and append to the/create a dictionary assigned to tests_taken in the way as shown in the point below.
+Each key in the dictionary should be the testpaper subject and each value should be a string in the format seen in the examples below (whether or not the student has failed, and their percentage in brackets).
+Examples:
+paper1 = Testpaper("Maths", ["1A", "2C", "3D", "4A", "5A"], "60%")  
+paper2 = Testpaper("Chemistry", ["1C", "2C", "3D", "4A"], "75%")  
+paper3 = Testpaper("Computing", ["1D", "2C", "3C", "4B", "5D", "6C", "7A"], "75%")
+
+
+student1 = Student()   
+student2 = Student()
+
+
+student1.tests_taken ➞ "No tests taken"
+student1.take_test(paper1, ["1A", "2D", "3D", "4A", "5A"])
+student1.tests_taken ➞ {"Maths" : "Passed! (80%)"}
+
+
+student2.take_test(paper2, ["1C", "2D", "3A", "4C"])
+student2.take_test(paper3, ["1A", "2C", "3A", "4C", "5D", "6C", "7B"])
+student2.tests_taken ➞ {"Chemistry" : "Failed! (25%)", "Computing" : "Failed! (43%)"}
+
+
+Ans:
+  
+
+
+
+3. Due to unforseen circumstances in Suburbia, the trains will be delayed by a further 10 minutes.
+Create a function that will help to plan out and manage these delays! Create a function called manage_delays that does the following:
+
+
+Parameters will be the train object, a destination and number of minutes the delay is.
+Increment to the train object's expected_time by the delay, if the destination given is in the train object's destinations.
+Examples:
+trains = [
+  Train(["Townsville", "Suburbia", "Urbantska"], "13:04"),
+  Train(["Farmsdale", "Suburbia", "Lakeside Valley"], "13:20"),
+  Train(["Suburbia", "Townsville", "Lakeside Valley"], "13:22")
+]
+
+
+for t in trains:
+    manage_delays(t, "Lakeside Valley", 60)
+
+
+trains[0].expected_time ➞ "13:04"
+trains[1].expected_time ➞ "14:20"
+trains[2].expected_time ➞ "14:22"
+
+
+Ans:
+  
+
+
+
+4. Ted works as a computer programmer at Minecraft Inc. His boss has just given him an important assignment to update the code for the minecart tracks by the end of April. However, he has recently had to self-isolate due to Corvid-19 and has left the code for the tracks. BACK AT WORK!! He has the shorthand for the tracks he's supposed to look at, and where the carts are suppost to end up, but not the actual code.
+He knows that:
+
+
+"-->" = "Speed-Up Track" ⁠— If a minecart interacts with this track, it's velocity increases by 2.67 BPS unless it's at its maximum speed of 8 BPS.
+"<-->" = "Powered Track" ⁠— If a minecart interacts with this track, it's velocity remains the same.
+"<--" = "Slow-Down Track" ⁠— If a minecart interacts with this track, it's velocity decreases by 2.67 BPS unless it's velocity equals 0, at which point it stops.
+"---" = "Unpowered Track" ⁠— If a minecart interacts with this track, it's velocity decreases by 1 BPS unless it's velocity equals 0, at which point it stops.
+Help Ted by writing a class for the tracks that interact with the provided Minecart class as shown above. And then write a function that will take a list of the shorthand tracks and:
+
+
+If the Minecart reaches the last peice of Track, return True.
+Else return the index of the Track where the Minecart stops.
+Examples:
+mine_run(["-->", "-->", "-->", "<--", "<--", "<--"]) ➞ True
+mine_run(["-->", "<--", "-->", "-->", "<-->", "---"]) ➞ 1
+
+
+
+
+Ans:
+
+
+  
+
+5. Make a Rectangle class with four parameters, an x, a y (representing the top-left corner of the rectangle), a width and a height exclusively in that order.
+Lastly, make a function intersecting that takes two Rectangle objects and returns True if those objects are intersecting (colliding), else return False.
+
+
+Examples:
+a = Rectangle(10, 20, 100, 20)
+b = Rectangle(10, 40, 15, 20)
+c = Rectangle(50, 50, 20, 30)
+
+
+intersecting(a, b) ➞ True
+intersecting(a, c) ➞ False
+intersecting(b, c) ➞ True
+
+
+
+
+Ans:
